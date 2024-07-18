@@ -1,0 +1,21 @@
+<div class="content" role="main">
+  <div class="sample">
+    <org-diagram
+      [items]="items"
+      [pageFitMode]="PageFitMode.None"
+      [orientationType]="orientationType"
+      [cursorItem]="0"
+      [centerOnCursor]="true"
+      [hasSelectorCheckbox]="Enabled.False"
+      [templates]="[{
+        name: 'nodeTemplate',
+        itemSize: { width: 150, height: 150},
+        itemTemplate: nodeTemplate
+      }]"
+    >
+    </org-diagram>
+  </div>
+  <ng-template #nodeTemplate let-itemConfig="context" let-isCursor="isCursor">
+    <app-node [node]="itemConfig"></app-node>
+  </ng-template>
+</div>
